@@ -7,14 +7,14 @@
     get(id).innerHTML = s + "";
   }
   function calc() {
-    const a = parseFloat(get("a").value);
-    const b = parseFloat(get("b").value);
+    const a = parseFloat(get("a").value) || 0;
+    const b = parseFloat(get("b").value) || 0;
     set("result", a + b);
   }
 </script>
 <p>Enter info below id0t this thing will add it n0b</p>
 <form>
-  <table>
+  <table border="1">
     <tbody>
       <tr>
         <td>Enter a: </td>
@@ -36,7 +36,7 @@
     </tbody>
   </table>
   <br>
-  <table>
+  <table border="1">
     <tbody>
       <tr>
         <td>Result: </td>
