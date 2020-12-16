@@ -1,0 +1,18 @@
+td.valuecell {
+  text-align: right;
+}
+
+td, th {
+  border: solid 1px black;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+table {
+  border-collapse: collapse;
+  border: solid 1px black;
+}
+
+.mono {
+  font-family: monospace;
+}
