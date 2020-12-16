@@ -1,4 +1,49 @@
 <h1>Monky is working on something...</h1>
-<script>
-  
+<script type="text/javascript">
+  function get(id) {
+    return document.getElementById(id);
+  }
+  function set(id, s) {
+    get(id).innerHTML = s + "";
+  }
+  function calc() {
+    const a = parseFloat(get("a").value);
+    const b = parseFloat(get("b").value);
+    set("result", a + b);
+  }
 </script>
+<p>Enter info below id0t this thing will add it n0b</p>
+<form>
+  <table>
+    <tbody>
+      <tr>
+        <td>Enter a: </td>
+        <td>
+          <input id="a" type="text" size=5>
+        </td>
+      </tr>
+      <tr>
+        <td>Enter b: </td>
+        <td>
+          <input id="b" type="text" size=5>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:right">
+          <input type="button" value="Calculate" onClick="calc();">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <table>
+    <tbody>
+      <tr>
+        <td>Result: </td>
+        <td style="text-align:right; width:4em">
+          <span id="result">-</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
