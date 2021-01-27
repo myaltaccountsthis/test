@@ -4,13 +4,25 @@
   function get(id) {
     return document.getElementById(id);
   }
+  function parseNum(id) {
+    return parseFloat(get(id).value) || 0
+  }
   function set(id, s) {
     get(id).innerHTML = s + "";
   }
   function calc() {
-    const a = parseFloat(get("a").value) || 0;
-    const b = parseFloat(get("b").value) || 0;
+    const a = parseNum("a");
+    const b = parseNum("b");
     set("result", a + b);
+  }
+  
+  function onClick() {
+    var num = parseNum("clickNum");
+    num++;
+    set("clickNum", num);
+  }
+  function reset() {
+    set("clickNum", 0);
   }
 </script>
 <p>Enter info below id0t this thing will add it n0b</p>
@@ -50,3 +62,17 @@
 </form>
 <br><br><br><br><br>
 <p>what</p>
+<form>
+  <input type="button" value="click" onClick="onClick();">
+  <table>
+    <tbody>
+      <tr>
+        <td colspan="4">
+          <input type="button" value="clickReset" onClick="reset();">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<p>Clicks: </p>
+<span id="clickNum">-</span>
