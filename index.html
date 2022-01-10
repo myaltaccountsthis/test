@@ -1,6 +1,9 @@
 <link rel="stylesheet" type="text/css" href="./style.css"></link>
 <h1>Monky is working on something...</h1>
 <script type="text/javascript">
+  let intervalId = 0;
+  let t = 0;
+  let total = 0;
   function get(id) {
     return document.getElementById(id);
   }
@@ -18,14 +21,32 @@
     const b = parseNum("b");
     set("result", a + b);
   }
-  
   function onClick() {
     const num = getText("clickNum");
     set("clickNum", num + 1);
+    if (intervalId == 0) {
+      startTime();
+    }
+    total++;
+    set("total", "Total: " + total);
     setTimeout(() => {
       set("clickNum", getText("clickNum") - 1);
     }, 1000);
   }
+  function startTime() {
+    clearInterval(intervalId);
+    t = 0;
+    intervalId = setInterval(() => {
+      t += 5;
+      set("time",  (t / 1000).toFixed(3) + "s");
+    }, 5);
+  }
+  function stopTime() {
+    clearInterval(intervalId);
+    intervalId = 0;
+    set("time", "0s")
+  }
+  // TODO add avg cps
 </script>
 <p>Enter info below id0t this thing will add it n0b</p>
 <form>
@@ -67,7 +88,9 @@
 <form>
   <input type="button" value="Click Here" id="clickButton" onClick="onClick();">
   <br>
-  <input type="button" value="Reset Count" onClick="set('clickNum', 0)">
+  <input type="button" value="Reset Count" onClick="set('clickNum', 0); stopTime(); total = 0; set('total', 'Total: 0');">
 </form>
 <p>Clicks: </p>
 <p id="clickNum">-</p>
+<p id="total">Total: 0</p>
+<p id="time">0s</p>
