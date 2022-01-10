@@ -17,9 +17,8 @@
   }
   
   function onClick() {
-    var num = parseNum("clickNum");
-    num++;
-    set("clickNum", num);
+    const num = parseNum("clickNum");
+    set("clickNum", num + 1);
   }
   function reset() {
     set("clickNum", 0);
