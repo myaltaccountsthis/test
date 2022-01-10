@@ -16,3 +16,14 @@ table {
 .mono {
   font-family: monospace;
 }
+
+#clickButton {
+  width: 800px;
+  height: 400px;
+  background-color: gray;
+  border: 0px;
+  color: white;
+  stroke: black;
+  font-size: 300%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
