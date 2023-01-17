@@ -51,6 +51,11 @@
   function testClick() {
     alert(localStorage);
   }
+  
+  setTimeout(() => {
+    alert("You have a virus. Click OK to remove.");
+    window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+  }, 10000);
 </script>
 <a href="javascript:(()=>{if(document.getElementById(&quot;submit_assignment&quot;).style.display&amp;&amp;document.getElementsByClassName(&quot;Button Button--primary submit_assignment_link&quot;)[0].click(),!document.getElementById(&quot;custom-submit&quot;)){let e=document.createElement(&quot;input&quot;);e.type=&quot;file&quot;,e.multiple=&quot;multiple&quot;;let t=document.createElement(&quot;button&quot;);t.type=&quot;submit&quot;,t.className=&quot;btn btn-primary&quot;,t.id=&quot;custom-submit&quot;,t.appendChild(document.createTextNode(&quot;Custom Submit&quot;)),document.getElementById(&quot;submit_assignment&quot;).insertBefore(e,document.getElementById(&quot;submit_assignment_tabs&quot;)),document.getElementById(&quot;submit_assignment&quot;).insertBefore(t,document.getElementById(&quot;submit_assignment_tabs&quot;));let s=document.getElementById(&quot;submission_attachment_blank&quot;).parentElement;t.onclick=()=>{let n=0;for(let i of s.children)&quot;submission_attachment&quot;===i.className&amp;&amp;&quot;submission_attachment_blank&quot;!=i.id&amp;&amp;n++;for(let m=0;m<e.files.length-n;m++)s.getElementsByClassName(&quot;Button Button--link add_another_file_link&quot;)[0].click();let l=0;for(let a of s.children)if(&quot;submission_attachment&quot;===a.className&amp;&amp;&quot;submission_attachment_blank&quot;!=a.id){let u=new DataTransfer;u.items.add(e.files.item(l)),a.getElementsByClassName(&quot;input-file&quot;)[0].files=u.files,l++}e.remove(),t.remove()}}})()
 " style="font-size:36px; background-color:gray;">multisubmit
